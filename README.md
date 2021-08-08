@@ -6,7 +6,7 @@ Image Sldier with indicator using flutter framework and dart language.
 
 ## Demo Video
 
-<img src="image-slider.gif" alt="Image Slider demo gif">
+<center><img src="image-slider.gif" alt="Image Slider demo gif" width="200"></center>
 
 ## Getting Started
 
