@@ -2,7 +2,7 @@
 
 # Image Slider Indicator
 
-Image Sldier with indicator using flutter framework and dart language.
+Image Slider with indicator using flutter framework and dart language.
 
 ## Demo Video
 
