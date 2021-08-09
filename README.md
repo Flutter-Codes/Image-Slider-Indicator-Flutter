@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# Slider Indicator
+# Image Slider Indicator
 
 Image Sldier with indicator using flutter framework and dart language.
 
