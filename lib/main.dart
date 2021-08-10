@@ -56,86 +56,91 @@ class _ExampleState extends State<Example> {
       body: SafeArea(
         child: Container(
           height: 300, // total height of the container [Image Box]
-          child: PageView.builder(
-            controller: controller,
-            itemCount: offerPercentage.length,
-            scrollDirection: Axis.horizontal, // scrolling direction of image
-            physics: ScrollPhysics(), // scrolling behaviour
-            onPageChanged: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            itemBuilder: (context, i1) {
-              return Stack(
-                children: [
-                  Image.asset(
-                    offerImage[i1], // List of Offers precentages
-                    width: MediaQuery.of(context).size.width,
-                    colorBlendMode: BlendMode.softLight,
-                    color: Colors.black.withOpacity(0.8),
-                    fit: BoxFit.cover,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          offerPercentage[i1], // List of Offers precentages
-                          style: TextStyle(
-                            fontSize: 45,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          'discount on your first order',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ), //  end offers
-                  Positioned(
-                    bottom: 15, // Position form Bottom
-                    right: 15, // Position from Right
-                    child: Container(
-                      height: 15,
-                      child: ListView.builder(
-                        itemCount: offerPercentage.length,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        physics: ScrollPhysics(),
-                        itemBuilder: (BuildContext context, int i2) {
-                          return Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Container(
-                              height: 5,
-                              width: 15,
-                              decoration: _currentIndex == i2
-                                  ? BoxDecoration(
-                                      color: Colors
-                                          .white, // Selected Slider Indicator Color
-                                      borderRadius: BorderRadius.circular(15))
-                                  : BoxDecoration(
-                                      color: Colors
-                                          .black, // Unselected Slider Indicator Color
-                                      shape: BoxShape
-                                          .circle // shape of Unselected indicator
-                                      ),
-                            ),
-                          );
-                        },
+          child: Stack(
+            children: [
+              PageView.builder(
+                controller: controller,
+                itemCount: offerPercentage.length,
+                scrollDirection:
+                    Axis.horizontal, // scrolling direction of image
+                physics: ScrollPhysics(), // scrolling behaviour
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                itemBuilder: (context, i1) {
+                  return Stack(
+                    children: [
+                      Image.asset(
+                        offerImage[i1], // List of Offers precentages
+                        width: MediaQuery.of(context).size.width,
+                        colorBlendMode: BlendMode.softLight,
+                        color: Colors.black.withOpacity(0.8),
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                  ) // end indicator
-                ],
-              );
-            },
+                      Container(
+                        alignment: Alignment.center,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              offerPercentage[i1], // List of Offers precentages
+                              style: TextStyle(
+                                fontSize: 45,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              'discount on your first order',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ), //  end offers
+                    ],
+                  );
+                },
+              ),
+              Positioned(
+                bottom: 15, // Position form Bottom
+                right: 15, // Position from Right
+                child: Container(
+                  height: 15,
+                  child: ListView.builder(
+                    itemCount: offerPercentage.length,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: ScrollPhysics(),
+                    itemBuilder: (BuildContext context, int i2) {
+                      return Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          height: 5,
+                          width: 15,
+                          decoration: _currentIndex == i2
+                              ? BoxDecoration(
+                                  color: Colors
+                                      .white, // Selected Slider Indicator Color
+                                  borderRadius: BorderRadius.circular(15))
+                              : BoxDecoration(
+                                  color: Colors
+                                      .black, // Unselected Slider Indicator Color
+                                  shape: BoxShape
+                                      .circle // shape of Unselected indicator
+                                  ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ) // end indicator
+            ],
           ),
         ),
       ),
