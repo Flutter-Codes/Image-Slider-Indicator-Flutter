@@ -169,3 +169,7 @@ class _ExampleState extends State<Example> {
 | Slider 1                                   | Slider 2                                  | Slider 3                                   |
 | ------------------------------------------ | ----------------------------------------- | ------------------------------------------ |
 | ![Splash Screen](/screenshot/slider-1.jpg) | ![Login Screen](/screenshot/slider-2.jpg) | ![Signup Screen](/screenshot/slider-3.jpg) |
+
+## Licence
+
+[MIT Licence](https://raw.githubusercontent.com/om-chauhan/Image-Slider-Indicator-Flutter/master/LICENCE)
